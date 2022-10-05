@@ -3,7 +3,7 @@
         Event-Driven Architecture with Dataverse and Azure - Demonstration
     </h1>
     <h3 align="center">
-        Application to process messages from an Azure Service Bus to a Dataverse environment through a C# Azure Functions app using the Microsoft.PowerPlatform.Dataverse.Client package.
+        Demonstration code / configuration to present event-driven architecture style with Dataverse (Power Platform) and Azure.
     </h3>
 </p>
 
