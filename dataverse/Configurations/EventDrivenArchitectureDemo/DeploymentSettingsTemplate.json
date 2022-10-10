@@ -1,0 +1,10 @@
+{
+  "EnvironmentVariables": [],
+  "ConnectionReferences": [
+    {
+      "LogicalName": "rpo_sharedservicebus_ba7ab",
+      "ConnectionId": "",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_servicebus"
+    }
+  ]
+}

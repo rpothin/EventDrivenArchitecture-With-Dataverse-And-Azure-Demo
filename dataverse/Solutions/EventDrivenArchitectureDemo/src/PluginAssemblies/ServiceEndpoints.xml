@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceEndpoints xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ServiceEndpoint ServiceEndpointId="{409b4ce0-4548-ed11-bba2-000d3af4e276}" Name="Integration with Azure Service Bus queue">
+    <ConnectionMode>1</ConnectionMode>
+    <Contract>6</Contract>
+    <Description>Integration to be able to send message to Azure Service Bus queue using a Dataverse Service Endpoint</Description>
+    <Path>dataverse-outbound-serviceendpoint</Path>
+    <SolutionNamespace>sb-demo0-shfocj5ezeh66</SolutionNamespace>
+    <UserClaim>2</UserClaim>
+    <IsCustomizable>1</IsCustomizable>
+    <AuthType>2</AuthType>
+    <MessageFormat>2</MessageFormat>
+    <NamespaceAddress>sb://sb-demo0-shfocj5ezeh66.servicebus.windows.net/</NamespaceAddress>
+    <NamespaceFormat>2</NamespaceFormat>
+    <SASKeyName>DataverseServiceEndpointInbound</SASKeyName>
+    <UseKeyVaultConfiguration>0</UseKeyVaultConfiguration>
+  </ServiceEndpoint>
+</ServiceEndpoints>

@@ -77,7 +77,22 @@
         </Address>
       </Addresses>
     </Publisher>
-    <RootComponents />
-    <MissingDependencies />
+    <RootComponents>
+      <RootComponent type="29" id="{0140ba0e-4448-ed11-bba2-000d3af4e276}" behavior="0" />
+      <RootComponent type="62" schemaName="rpo_CustomersHub" behavior="0" />
+      <RootComponent type="80" schemaName="rpo_CustomersHub" behavior="0" />
+      <RootComponent type="92" id="{8b0b71bf-4648-ed11-bba2-000d3af4e276}" behavior="0" />
+      <RootComponent type="95" id="{409b4ce0-4548-ed11-bba2-000d3af4e276}" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" />
+        <Dependent type="80" schemaName="rpo_CustomersHub" displayName="Customers Hub" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="rpo_sharedcommondataserviceforapps_26cf9" solution="Active" id.connectionreferencelogicalname="rpo_sharedcommondataserviceforapps_26cf9" />
+        <Dependent type="29" displayName="Account created - Push message to Azure Service Bus" id="{0140ba0e-4448-ed11-bba2-000d3af4e276}" />
+      </MissingDependency>
+    </MissingDependencies>
   </SolutionManifest>
 </ImportExportXml>

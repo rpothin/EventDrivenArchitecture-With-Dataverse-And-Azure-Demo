@@ -10,7 +10,20 @@
   <OrganizationSettings />
   <optionsets />
   <CustomControls />
+  <SdkMessageProcessingSteps />
+  <ServiceEndpoints />
+  <AppModuleSiteMaps />
+  <AppModules />
   <EntityDataProviders />
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="rpo_sharedservicebus_ba7ab">
+      <connectionreferencedisplayname>Azure Service Bus - Send Messages</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_servicebus</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
   <Languages>
     <Language>1033</Language>
   </Languages>
