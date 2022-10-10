@@ -5,6 +5,7 @@ param principalId string = ''
 param uniqueIdentifierForResourcesName string = ''
 param tags object
 param serviceBusQueuesNames array = []
+param serviceBusSharedAccessPolicies array = []
 
 /* Resources */
 // Azure Monitor
@@ -39,6 +40,7 @@ module serviceBus 'modules/servicebus-queues.bicep' = {
     uniqueIdentifierForResourcesName: uniqueIdentifierForResourcesName
     tags: tags
     serviceBusQueuesNames: serviceBusQueuesNames
+    serviceBusSharedAccessPolicies: serviceBusSharedAccessPolicies
   }
 }
 

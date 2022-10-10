@@ -18,6 +18,26 @@
                 "dataverse-inbound-flow",
                 "dataverse-inbound-function"
             ]
+        },
+        "serviceBusQueuesShareAccessPolicies": {
+            "value": [
+                {
+                    "name": "dataverse-outbound-flow",
+                    "right": "Send"
+                },
+                {
+                    "name": "dataverse-outbound-serviceendpoint",
+                    "right": "Send"
+                },
+                {
+                    "name": "dataverse-inbound-flow",
+                    "right": "Listen"
+                },
+                {
+                    "name": "dataverse-inbound-function",
+                    "right": "Listen"
+                }
+            ]
         }
     }
 }

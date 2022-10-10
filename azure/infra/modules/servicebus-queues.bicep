@@ -4,6 +4,7 @@ param location string = resourceGroup().location
 param uniqueIdentifierForResourcesName string = ''
 param tags object
 param serviceBusQueuesNames array = []
+param serviceBusSharedAccessPolicies array = []
 
 /* Variables */
 var abbreviations = loadJsonContent('../abbreviations.json')
@@ -22,6 +23,17 @@ resource serviceBus 'Microsoft.ServiceBus/namespaces@2022-01-01-preview' = {
     minimumTlsVersion: '1.2'
   }
 }
+
+// Service Bus Shared Access Policies
+resource serviceBusAuthorizationRules 'Microsoft.ServiceBus/namespaces/AuthorizationRules@2022-01-01-preview' = [for serviceBusSharedAccessPolicy in serviceBusSharedAccessPolicies: {
+  parent: serviceBus
+  name: serviceBusSharedAccessPolicy.name
+  properties: {
+    rights: [
+      serviceBusSharedAccessPolicy.right
+    ]
+  }
+}]
 
 // Service Bus Queues
 resource serviceBusQueues 'Microsoft.ServiceBus/namespaces/queues@2022-01-01-preview' = [for queueName in serviceBusQueuesNames: {

@@ -17,6 +17,9 @@ param principalId string = ''
 @description('Name of queues to configure in the service bus')
 param serviceBusQueuesNames array = []
 
+@description('Name of shared access policies to configure in the service bus')
+param serviceBusSharedAccessPolicies array = []
+
 /* Variables */
 var abbreviations = loadJsonContent('./abbreviations.json')
 var uniqueIdentifierForResourcesName = toLower(uniqueString(subscription().id, '${environmentName}', location))
@@ -42,6 +45,7 @@ module resources './resources.bicep' = {
         uniqueIdentifierForResourcesName: uniqueIdentifierForResourcesName
         tags: tags
         serviceBusQueuesNames: serviceBusQueuesNames
+        serviceBusSharedAccessPolicies: serviceBusSharedAccessPolicies
     }
 }
 
