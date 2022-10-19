@@ -20,6 +20,9 @@ param serviceBusQueuesNames array = []
 @description('Name of shared access policies to configure in the service bus')
 param serviceBusSharedAccessPolicies array = []
 
+@description('Key vault secrets name, content type and value')
+param keyVaultSecretsDetails array = []
+
 /* Variables */
 var abbreviations = loadJsonContent('./abbreviations.json')
 var uniqueIdentifierForResourcesName = toLower(uniqueString(subscription().id, '${environmentName}', location))
@@ -46,6 +49,7 @@ module resources './resources.bicep' = {
         tags: tags
         serviceBusQueuesNames: serviceBusQueuesNames
         serviceBusSharedAccessPolicies: serviceBusSharedAccessPolicies
+        keyVaultSecretsDetails: keyVaultSecretsDetails
     }
 }
 
