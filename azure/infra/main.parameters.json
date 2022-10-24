@@ -19,7 +19,7 @@
                 "dataverse-inbound-function"
             ]
         },
-        "serviceBusQueuesShareAccessPolicies": {
+        "serviceBusSharedAccessPolicies": {
             "value": [
                 {
                     "name": "dataverse-outbound-flow",

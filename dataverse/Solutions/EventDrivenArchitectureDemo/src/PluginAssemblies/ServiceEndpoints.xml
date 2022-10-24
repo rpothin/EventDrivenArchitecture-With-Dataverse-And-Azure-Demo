@@ -12,7 +12,7 @@
     <MessageFormat>2</MessageFormat>
     <NamespaceAddress>sb://sb-demo0-shfocj5ezeh66.servicebus.windows.net/</NamespaceAddress>
     <NamespaceFormat>2</NamespaceFormat>
-    <SASKeyName>DataverseServiceEndpointInbound</SASKeyName>
+    <SASKeyName>dataverse-outbound-serviceendpoint</SASKeyName>
     <UseKeyVaultConfiguration>0</UseKeyVaultConfiguration>
   </ServiceEndpoint>
 </ServiceEndpoints>

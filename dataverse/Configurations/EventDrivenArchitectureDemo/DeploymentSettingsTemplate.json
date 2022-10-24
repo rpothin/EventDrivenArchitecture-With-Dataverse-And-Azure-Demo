@@ -2,6 +2,11 @@
   "EnvironmentVariables": [],
   "ConnectionReferences": [
     {
+      "LogicalName": "rpo_AzureServiceBusReceiveMessages",
+      "ConnectionId": "",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_servicebus"
+    },
+    {
       "LogicalName": "rpo_sharedservicebus_ba7ab",
       "ConnectionId": "",
       "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_servicebus"

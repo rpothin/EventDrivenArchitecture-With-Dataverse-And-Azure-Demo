@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.22093.184" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.22101.140" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>EventDrivenArchitectureDemo</UniqueName>
     <LocalizedNames>
@@ -79,6 +79,7 @@
     </Publisher>
     <RootComponents>
       <RootComponent type="29" id="{0140ba0e-4448-ed11-bba2-000d3af4e276}" behavior="0" />
+      <RootComponent type="29" id="{4c8ec472-4a53-ed11-9561-000d3af4e276}" behavior="0" />
       <RootComponent type="62" schemaName="rpo_CustomersHub" behavior="0" />
       <RootComponent type="80" schemaName="rpo_CustomersHub" behavior="0" />
       <RootComponent type="92" id="{8b0b71bf-4648-ed11-bba2-000d3af4e276}" behavior="0" />
@@ -92,6 +93,10 @@
       <MissingDependency>
         <Required type="connectionreference" displayName="rpo_sharedcommondataserviceforapps_26cf9" solution="Active" id.connectionreferencelogicalname="rpo_sharedcommondataserviceforapps_26cf9" />
         <Dependent type="29" displayName="Account created - Push message to Azure Service Bus" id="{0140ba0e-4448-ed11-bba2-000d3af4e276}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="rpo_sharedcommondataserviceforapps_26cf9" solution="Active" id.connectionreferencelogicalname="rpo_sharedcommondataserviceforapps_26cf9" />
+        <Dependent type="29" displayName="Create contact on message reception in Azure Service Bus queue" id="{4c8ec472-4a53-ed11-9561-000d3af4e276}" />
       </MissingDependency>
     </MissingDependencies>
   </SolutionManifest>

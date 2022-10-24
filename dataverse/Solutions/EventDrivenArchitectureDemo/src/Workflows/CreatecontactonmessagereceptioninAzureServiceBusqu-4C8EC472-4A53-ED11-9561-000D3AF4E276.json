@@ -1,0 +1,115 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_servicebus": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "rpo_AzureServiceBusReceiveMessages"
+        },
+        "api": {
+          "name": "shared_servicebus"
+        }
+      },
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "rpo_sharedcommondataserviceforapps_26cf9"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_message_is_received_in_\"dataverse-inbound-flow\"_queue_(auto-complete)": {
+          "recurrence": {
+            "interval": 3,
+            "frequency": "Minute"
+          },
+          "metadata": {
+            "operationMetadataId": "caa1fc9c-5fe2-43bd-9059-64200919e9d3"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_servicebus",
+              "operationId": "GetMessageFromQueue",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_servicebus"
+            },
+            "parameters": {
+              "queueName": "dataverse-inbound-flow",
+              "queueType": "Main"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Parse_message_received": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "538b1011-fcda-4693-b7e8-719f6165c097"
+          },
+          "type": "ParseJson",
+          "inputs": {
+            "content": "@decodeBase64(triggerOutputs()?['body/ContentData'])",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "Add_a_new_contact": {
+          "runAfter": {
+            "Parse_message_received": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "23c4ff2d-4ffd-4de9-a361-636225910d8e"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "CreateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "contacts",
+              "item/lastname": "@body('Parse_message_received')?['lastName']",
+              "item/emailaddress1": "@body('Parse_message_received')?['email']",
+              "item/firstname": "@body('Parse_message_received')?['firstName']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}
