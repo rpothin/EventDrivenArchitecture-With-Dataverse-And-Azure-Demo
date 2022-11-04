@@ -26,7 +26,7 @@
                     "right": "Send"
                 },
                 {
-                    "name": "dataverse-outbound-serviceendpoint",
+                    "name": "dataverse-outbound-endpoint",
                     "right": "Send"
                 },
                 {
@@ -34,7 +34,7 @@
                     "right": "Listen"
                 },
                 {
-                    "name": "dataverse-inbound-function",
+                    "name": "dataverse-inbound-func",
                     "right": "Listen"
                 }
             ]
