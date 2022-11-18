@@ -22,7 +22,7 @@
         "serviceBusSharedAccessPolicies": {
             "value": [
                 {
-                    "name": "dataverse-outbound-flow",
+                    "name": "dataverse-outbound-cflow",
                     "right": "Send"
                 },
                 {
@@ -30,11 +30,11 @@
                     "right": "Send"
                 },
                 {
-                    "name": "dataverse-inbound-flow",
+                    "name": "dataverse-inbound-cflow",
                     "right": "Listen"
                 },
                 {
-                    "name": "dataverse-inbound-func",
+                    "name": "dataverse-inbound-azfunc",
                     "right": "Listen"
                 }
             ]
